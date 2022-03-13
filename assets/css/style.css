@@ -27,23 +27,27 @@
 
 body {
     background-color: var(--veryDarkBlue);
+    margin: auto;
 }
 
 main {
-    padding: 20px;
+    max-width: 1000px;
+    width: 100%;
     display: flex;
-    margin-top: 232px;
-    margin-left: 110px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 170px;
+    margin-top: 190px;    
 }
 
 
 .grid-container {
-    max-width: 1200px;
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 255px);
     column-gap: 30px;
     row-gap: 47px;
-    margin-left: 35px;
+    margin: auto;
 }
 
 header {
@@ -87,15 +91,20 @@ header {
 
 nav {
     background-color: var(--darkBlue);
-    border-radius: 10px;
-    padding: 25px 30px;
+    border-radius: 15px;
+    padding: 5px 30px 33px;
 }
 
 li {
     list-style: none;
     cursor: pointer;
-    margin-bottom: 20px;
+    margin-top: 20px;
     color: var(--desaturatedBlue);
+}
+
+li:hover {
+    color: white;
+    opacity: .8;
 }
 
 .work {
@@ -120,7 +129,7 @@ li {
 }
 
 .data:hover {
-    background-color: var(--desaturatedBlue);
+    background-color: hsl(235, 46%, 40%);
 }
 
 .top {
@@ -131,7 +140,8 @@ li {
 
 .options {
     width: 20px;
-    height: 5px;
+    height: auto;
+    display: block;
 }
 
 .options:hover {
@@ -139,7 +149,7 @@ li {
 }
 
 .data-daily {
-    display: flex;
+    display: none;
     flex-direction: column;
 }
 
@@ -159,7 +169,7 @@ li {
     margin-top: 25px;
 }
 
-.time i {
+.daily-time, .weekly-time, .monthly-time {
     font: inherit;
 }
 
@@ -170,7 +180,7 @@ li {
     margin-top: 9px;
 }
 
-.last i {
+.daily-last, .weekly-last, .monthly-last {
     font: inherit;
 }
 
@@ -227,4 +237,109 @@ li {
     background-size: 65px;
     width: 100%;    
     height: 200px;
+}
+
+.active {
+    color: white;
+}
+
+.activeData {
+    display: flex;
+}
+
+@media(max-width: 700px) {
+    main {
+        margin: auto;
+    }
+
+    .grid-container {
+        grid-template-columns: 325px;
+        margin-left: 5px;
+        margin-top: 60px;
+        row-gap: 25px;
+    }
+
+    .user {
+        flex-direction: row;
+        padding: 35px 25px 26px 30px;
+    }
+
+    .user-data {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .report {
+        margin-left: 18px;
+        margin-top: 9px;
+    }
+
+    .name {
+        font-size: 24px;
+        margin-left: 17px;
+        margin-top: 4px;
+        
+    }
+
+    .avatar {
+        width: 67px;
+        height: 67px;
+        margin-bottom: 5px;
+    }
+
+    header {
+        height: auto;
+        grid-row: 1/2;
+    }
+
+    nav {
+        padding-bottom: 25px;
+    }
+
+    ul {
+        display: flex;
+        align-items: center;
+    }
+
+    li:first-child {
+        margin-left: 4px;
+        margin-right: 20px;
+    }
+
+    li {
+        margin-left: 38px;
+        margin-right: 27px;
+    }
+
+    li:last-child {
+        margin-left: 20px;
+        margin-right: 4px;
+    }
+
+    .work, .play, .study, .exercise, .social, .self-care {
+        height: auto;
+    }
+
+    .data {
+        height: auto;
+        margin-top: 38px;
+        padding: 27px;
+        padding-bottom: 32px;
+    }
+
+    .data-daily, .data-monthly, .data-weekly {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .time {
+        font-size: 30px;
+        margin-top: 5px;
+        margin-left: -1px;
+    }
+
+    .last {
+        margin-top: 15px;
+    }
+
 }
